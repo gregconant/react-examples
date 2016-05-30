@@ -1,6 +1,6 @@
 <html>
 <head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/react-with-addons.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/react-with-addons.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/JSXTransformer.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"></link>
@@ -8,7 +8,7 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-sm-5 target">
+        <div class="col-md-12 target">
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@
     render: function() {
       return <div className="col-sm-6 col-md-4">
         <div className="thumbnail">
-          <img src="{this.props.imageUrl}" alt="..."></img>
+          <img src={this.props.imageUrl} alt="..." height="150" width="150"></img>
           <div className="caption">
             <h3>{this.props.header}</h3>
             <p>{this.props.description}</p>
@@ -45,8 +45,7 @@
     var ThumbnailList = React.createClass({
       render: function() {
         var list = this.props.thumbnailData.map(function(thumbnailProps) {
-          return
-           <Thumbnail />
+          return <Thumbnail {...thumbnailProps} />
         });
 
         return <div>
@@ -56,7 +55,6 @@
     });
 
     var options = {
-
       thumbnailData: [
         {
           title: 'Show Courses',
@@ -69,23 +67,24 @@
           title: 'Show Courses',
           number: 36,
           header: 'Learn Javascript',
-          description: 'We like Javascript. It lets us do all sorts of things. We learn things.',
+          description: 'We like Javascript. It lets us do all sorts of things. Webby things.',
           imageUrl: 'https://www.codementor.io/assets/page_img/learn-javascript.png'
         },
         {
           title: 'Show Courses',
           number: 50,
           header: 'Learn Jasmine',
-          description: 'This is Jasmine. It is for testing. Testing Javascript. It used to be unthinkable. Now it is so very thinkable.',
+          description: 'This is Jasmine. It is for testing. Testing Javascript. It used to be unthinkable. Now it is very thinkable.',
           imageUrl: 'http://derickbailey.com/wp-content/uploads/2014/04/jasmine.png'
         }
       ]
     };
 
-//    var element = React.createElement(ThumbnailList, options);
-    var elem = React.createElement(Badge, {title: "Sent", number: 12 });
-    React.render(elem, document.body);
-//    React.render(element, document.querySelector('.container'));
+    var oneThumbnail = React.createElement(Thumbnail, options.thumbnailData[0]);
+//    React.render(oneThumbnail, document.querySelector('.target'));
+
+    var allThumbnails = React.createElement(ThumbnailList, options);
+    React.render(allThumbnails, document.querySelector('.target'));
 
 
 
