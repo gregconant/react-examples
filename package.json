@@ -11,5 +11,10 @@
     "url": "npm install --save gulp gulp-react gulp-concat"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-react": "^3.1.0"
+  }
 }
