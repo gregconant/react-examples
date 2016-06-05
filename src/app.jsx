@@ -1,3 +1,5 @@
+var ThumbnailList = require('thumbnail-list');
+
 var options = {
   thumbnailData: [
     {
