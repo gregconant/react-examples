@@ -1,5 +1,5 @@
-var React = require('react');
-var Thumbnail = require('./thumbnail');
+var React = require('react'),
+    Thumbnail = require('./thumbnail');
 
 module.exports = React.createClass({
   render: function() {

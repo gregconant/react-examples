@@ -1,5 +1,5 @@
-var React = require('react');
-var Badge = require('./badge'); // have to specify current directory
+var React = require('react'),
+    Badge = require('./badge'); // have to specify current directory
 
 module.exports = React.createClass({
   render: function() {
