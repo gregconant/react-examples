@@ -1,3 +1,7 @@
+var React = require('React'),
+    Thumbnail = require('./thumbnail'),
+    ThumbnailList = require('./thumbnail-list');
+
 var options = {
   thumbnailData: [
     {
@@ -28,4 +32,4 @@ var oneThumbnail = React.createElement(Thumbnail, options.thumbnailData[0]);
 //    React.render(oneThumbnail, document.querySelector('.target'));
 
 var allThumbnails = React.createElement(ThumbnailList, options);
-React.render(allThumbnails, document.querySelector('.target'));
+React.render(allThumbnails, document.querySelector('.container'));
