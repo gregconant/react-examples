@@ -6,10 +6,12 @@ var Button = require('./button');
 //var List = require('./list');
 
 module.exports = React.createClass({
-
+  handleClick: function() {
+    alert('hello from dropdown');
+    },
   render: function() {
     return <div class="dropdown">
-      <Button title = { this.props.title } className="btn-default" subTitleClassName="caret" />
+      <Button whenClicked={this.handleClick} title = { this.props.title } className="btn-default" subTitleClassName="caret" />
     </div>
 }
 
