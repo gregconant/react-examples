@@ -7,7 +7,7 @@ var ListItem = require('./list-item');
 
 module.exports = React.createClass({
   handleClick: function() {
-    alert('hello from dropdown');
+    this.setState({ open: !this.state.open });
     },
   getInitialState: function() {
     return { open: false }
