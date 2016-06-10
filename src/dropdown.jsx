@@ -9,13 +9,19 @@ module.exports = React.createClass({
   handleClick: function() {
     this.setState({ open: !this.state.open });
     },
+  handleItemClick: function(item) {
+    this.setState( {
+      open: false
+//      itemTitle:
+    });
+    },
   getInitialState: function() {
     return { open: false }
   },
   render: function() {
     var list = this.props.items.map(function(item) {
-      return <ListItem item={item} />
-    });
+      return <ListItem item={item} whenItemClicked={this.handleItemClick } />
+    }.bind(this));
     return <div className="dropdown">
       <Button
         whenClicked={this.handleClick}
